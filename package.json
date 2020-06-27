@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -x npm run server",
-    "server": "node --inspect=9227 index"
+    "start": "nodemon -x npm run server:dev",
+    "server:dev": "node --inspect=9227 index",
+    "server": "node index"
   },
   "repository": {
     "type": "git",

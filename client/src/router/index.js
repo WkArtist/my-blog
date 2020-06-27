@@ -15,10 +15,16 @@ const routes = [
     path: '/article/:id',
     name: 'ArticleDetail',
     component: ArticleDetail
+  },
+  {
+    path: '/tag/:tag',
+    name: 'Tag',
+    component: ArticleList
   }
 ]
 
 const router = new VueRouter({
+  linkExactActiveClass: 'router-active',
   mode: 'history',
   base: process.env.BASE_URL,
   routes

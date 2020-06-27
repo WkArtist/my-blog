@@ -1,2 +1,2 @@
-// require('./models/sync')
+require('./models/sync')
 require('./routes/init')

@@ -20,6 +20,15 @@ exports.getArticleList = async function (page = 1, limit = 5, tag) {
     }
 }
 
+exports.getArtDetailById = async function (id) {
+    const result = await Article.findByPk(id);
+    if (result) {
+        return result.toJSON();
+    } else {
+        return null;
+    }
+}
+
 exports.addArticle = async function (articleObj) {
     //只保留所需的数据
     articleObj = pick(articleObj, "title", "content", "tag")

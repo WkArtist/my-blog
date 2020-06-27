@@ -8,15 +8,15 @@
       <span class="aside-profile-description">初级工程师一枚</span>
     </div>
     <ul class="aside-buttons">
-      <li>
-        <router-link to="/">
+      <li class="active">
+        <router-link to="/" exact-active-class="router-active">
           <span>首页</span>
         </router-link>
       </li>
       <li>
-        <a href="#">
+        <router-link to="/tag/vue" exact-active-class="router-active">
           <span>Vue</span>
-        </a>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -79,5 +79,12 @@ export default {
 .aside-container .aside-buttons li a {
   display: block;
   color: #999;
+}
+.aside-container .aside-buttons li a:hover{
+  color: #fff;
+}
+.aside-container .aside-buttons li .router-active{
+  color: #fff;
+  text-decoration: underline;
 }
 </style>

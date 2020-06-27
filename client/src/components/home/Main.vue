@@ -3,7 +3,7 @@
       <div class="content-container">
         <router-view />
       </div>
-      <div class="footer-container">footer</div>
+      <div class="footer-container"></div>
   </div>
 </template>
 
@@ -34,6 +34,6 @@ export default {
         border-top: 1px solid #ddd;
         font-size: .9em;
         margin-top: 20px;
-        border: 1px solid;
+        /* border: 1px solid; */
     }
 </style>

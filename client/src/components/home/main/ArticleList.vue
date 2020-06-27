@@ -1,7 +1,7 @@
 <template>
   <div class="article-list-container">
     <div class="article-list">
-      <ArticleCard v-for="(item, index) in $store.state.articleList" :data="$store.state.articleList[index]" :key="item.id"/>
+      <ArticleCard v-for="(item, index) in $store.state.articleList" :propsData="$store.state.articleList[index]" :key="item.id"/>
       <!-- <ArticleCard />
       <ArticleCard />
       <ArticleCard />
@@ -24,7 +24,12 @@ export default {
 
   },
   mounted () {
-    this.$store.dispatch('getArticleList')
+
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.$store.dispatch('getArticleList', { tag: vm.$route.params.tag ? vm.$route.params.tag : '' })
+    })
   }
 }
 </script>

@@ -14,10 +14,7 @@ router.get('/', sendMsg.asyncHandler(async (req, res) => {
 
 router.get('/detail/:id', sendMsg.asyncHandler(async (req, res) => {
     const id = req.params.id
-    const file = path.resolve(__dirname, `../../public/markdown/${id}.md`)
-    if (file) {
-        return await fs.promises.readFile(file, 'utf8')
-    }
+    return await articleServ.getArtDetailById(id)
 }))
 
 router.post('/', sendMsg.asyncHandler(async (req, res) => {

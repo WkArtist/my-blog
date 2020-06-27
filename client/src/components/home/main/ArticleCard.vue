@@ -2,27 +2,39 @@
   <div class="article-card-container">
       <div class="article-list-item-line">
           <div class="article-list-item-title">
-              <a href="#">
-                  <h1>{{data.title}}</h1>
-              </a>
+              <router-link :to="detailPath">
+                  <h1>{{propsData.title}}</h1>
+              </router-link>
           </div>
           <div class="article-list-item-aside">
-              <span>发布于 {{data.createdAt}}</span>
+              <span>发布于 {{$moment(new Date(propsData.createdAt)).format('llll')}}</span>
           </div>
       </div>
-      <p>{{data.content.slice(0,100)}}</p>
-    <a href="#">[ {{data.tag}} ]</a>
-    <a href="#" class="article-list-item-more">
+      <p>{{propsData.content.slice(0,100)}}</p>
+    <router-link :to="tagPath">[ {{propsData.tag}} ]</router-link>
+    <router-link :to="detailPath" class="article-list-item-more">
         阅读全文
-    </a>
+    </router-link>
   </div>
 
 </template>
 
 <script>
 export default {
-  props: ['data']
+  props: ['propsData'],
+  data () {
+    return {
 
+    }
+  },
+  computed: {
+    detailPath () {
+      return `/article/${this.propsData.id}`
+    },
+    tagPath () {
+      return `/tag/${this.propsData.tag.toLowerCase()}`
+    }
+  }
 }
 </script>
 

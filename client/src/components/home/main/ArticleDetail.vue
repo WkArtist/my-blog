@@ -1,13 +1,13 @@
 <template>
   <div class="artdetail-container">
     <div class="artdetail-text">
-      <h1>vue-socket.io3.08，3.09有bug接收不到数据</h1>
+      <h1>{{title}}</h1>
       <div class="artdetail-describe">
-        <span>发布日期：2020/5/3</span>
-        <span>更新日期：2020/5/3</span>
+        <span>发布日期：{{createdAt}}</span>
+        <span>更新日期：{{updatedAt}}</span>
         <span>
           分类：
-          <router-link to="/">Vue</router-link>
+          <router-link :to="tagPath">{{tag}}</router-link>
         </span>
       </div>
       <div class="artdetail-content" v-html="content"></div>
@@ -22,7 +22,16 @@ import hljs from 'highlight.js'
 export default {
   data () {
     return {
+      title: '',
+      createdAt: '',
+      updatedAt: '',
+      tag: '',
       content: ''
+    }
+  },
+  computed: {
+    tagPath () {
+      return `/tag/${this.tag.toLowerCase()}`
     }
   },
   methods: {
@@ -30,7 +39,12 @@ export default {
       fetch(`http://127.0.0.1:9527/api/article/detail/${this.$route.params.id}`)
         .then(resp => resp.json())
         .then(resp => {
-          this.content = this.mdToHTML(resp.data)
+          console.log(`article[${this.$route.params.id}]detail数据`, resp.data)
+          this.title = resp.data.title
+          this.createdAt = this.$moment(new Date(resp.data.createdAt)).format('llll')
+          this.updatedAt = this.$moment(new Date(resp.data.updatedAt)).format('llll')
+          this.tag = resp.data.tag
+          this.content = this.mdToHTML(resp.data.content)
         })
     },
     mdToHTML (str) {
