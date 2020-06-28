@@ -34,6 +34,6 @@ app.use('/api/upload', require('./api/upload'))
 //处理错误的中间件
 app.use("*", require("./errorMiddleware"))
 
-app.listen(9527, () => {
-    console.log('server listen on 9527')
+app.listen(80, () => {
+    console.log('server listen on 80')
 })

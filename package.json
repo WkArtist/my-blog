@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon -x npm run server:dev",
     "server:dev": "node --inspect=9227 index",
-    "server": "node index"
+    "server:pro": "pm2 start index.js"
   },
   "repository": {
     "type": "git",

@@ -1,4 +1,4 @@
-const path = require('path')
+// const path = require('path')
 
 module.exports = {
   devServer: {
@@ -6,11 +6,11 @@ module.exports = {
     //     warnings: false,
     //     errors: false
     // },
-    proxy: {
-      '/api': {
-        target: 'http://localhost:9527'
-      }
-    }
-  },
-  outputDir: path.resolve(__dirname, '../public')
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://localhost:80'
+    //   }
+    // }
+  }
+  // outputDir: path.resolve(__dirname, '../public')
 }

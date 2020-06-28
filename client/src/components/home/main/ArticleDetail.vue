@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     getData () {
-      fetch(`http://127.0.0.1:9527/api/article/detail/${this.$route.params.id}`)
+      fetch(`http://wkartist.com/api/article/detail/${this.$route.params.id}`)
         .then(resp => resp.json())
         .then(resp => {
           console.log(`article[${this.$route.params.id}]detail数据`, resp.data)

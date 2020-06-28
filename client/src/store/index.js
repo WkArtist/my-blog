@@ -19,9 +19,9 @@ export default new Vuex.Store({
   },
   actions: {
     getArticleList ({ commit }, params) {
-      let url = 'http://127.0.0.1:9527/api/article/'
+      let url = 'http://wkartist.com/api/article/'
       if (params) {
-        url = `http://127.0.0.1:9527/api/article/?page=${params.page || 1}&limit=${params.limit || 5}&tag=${params.tag}`
+        url = `http://wkartist.com/api/article/?page=${params.page || 1}&limit=${params.limit || 5}&tag=${params.tag}`
       }
       fetch(url)
         .then(resp => resp.json())
