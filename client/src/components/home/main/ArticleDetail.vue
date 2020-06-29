@@ -70,29 +70,37 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .artdetail-container {
   line-height: 1.7;
+
+  a {
+    color: #2479cc;
+  }
+
+  .artdetail-text {
+    h1 {
+      color: #333;
+      font-weight: 400;
+    }
+
+    .artdetail-describe {
+      color: #999;
+      font-size: 0.9em;
+      margin-bottom: 2em;
+
+      span {
+        margin-right: 15px;
+      }
+    }
+
+    .artdetail-over {
+      margin: 2em 0;
+      letter-spacing: 0.3em;
+      color: #999;
+      text-align: center;
+    }
+  }
 }
-.artdetail-container a {
-  color: #2479cc;
-}
-.artdetail-container .artdetail-text h1 {
-  color: #333;
-  font-weight: 400;
-}
-.artdetail-container .artdetail-text .artdetail-describe {
-  color: #999;
-  font-size: 0.9em;
-  margin-bottom: 2em;
-}
-.artdetail-container .artdetail-text .artdetail-describe span {
-  margin-right: 15px;
-}
-.artdetail-container .artdetail-text .artdetail-over {
-  margin: 2em 0;
-  letter-spacing: 0.3em;
-  color: #999;
-  text-align: center;
-}
+
 </style>

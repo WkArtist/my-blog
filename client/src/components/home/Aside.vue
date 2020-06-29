@@ -32,7 +32,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .aside-container {
   position: fixed;
   width: 250px;
@@ -42,49 +42,60 @@ export default {
   left: 0;
   top: 0;
   transition: 0.2s linear;
+
+  &.hide {
+    left: -250px;
+  }
+
+  .aside-profile{
+    padding: 40px 0 10px;
+    text-align: center;
+
+    img{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+  }
+
+  .aside-profile span {
+    display: block;
+    padding: 10px 0;
+
+    &.aside-profile-description {
+      color: #666;
+      font-size: 14px;
+    }
+
+    &.aside-profile-title {
+      font-size: 18px;
+    }
+  }
+
+  .aside-buttons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+
+      a {
+        display: block;
+        color: #999;
+        &:hover{
+          color: #fff;
+        }
+      }
+
+      .router-active{
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+  }
 }
-.aside-container.hide {
-  left: -250px;
-}
-.aside-container .aside-profile {
-  padding: 40px 0 10px;
-  text-align: center;
-}
-.aside-container .aside-profile img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
-.aside-container .aside-profile span {
-  display: block;
-  padding: 10px 0;
-}
-.aside-container .aside-profile span.aside-profile-title {
-  font-size: 18px;
-}
-.aside-container .aside-profile span.aside-profile-description {
-  color: #666;
-  font-size: 14px;
-}
-.aside-container .aside-buttons {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.aside-container .aside-buttons li {
-  height: 45px;
-  line-height: 45px;
-  text-align: center;
-}
-.aside-container .aside-buttons li a {
-  display: block;
-  color: #999;
-}
-.aside-container .aside-buttons li a:hover{
-  color: #fff;
-}
-.aside-container .aside-buttons li .router-active{
-  color: #fff;
-  text-decoration: underline;
-}
+
 </style>

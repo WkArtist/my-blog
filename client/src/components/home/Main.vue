@@ -13,7 +13,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     @media (max-width: 740px) {
         .main-container{
             padding-left: 40px !important;
@@ -23,17 +23,19 @@ export default {
         padding: 0 40px;
         padding-left: 290px;
         line-height: 1.7;
-    }
-    .main-container a{
-        color: #2479cc;
-    }
-    .main-container .footer-container{
-        line-height: 1.8;
-        text-align: center;
-        padding: 15px 0;
-        border-top: 1px solid #ddd;
-        font-size: .9em;
-        margin-top: 20px;
-        /* border: 1px solid; */
+
+        a{
+            color: #2479cc;
+        }
+
+        .footer-container{
+            line-height: 1.8;
+            text-align: center;
+            padding: 15px 0;
+            border-top: 1px solid #ddd;
+            font-size: .9em;
+            margin-top: 20px;
+            /* border: 1px solid; */
+        }
     }
 </style>

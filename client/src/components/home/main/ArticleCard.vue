@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     @media (max-width: 600px) {
         .article-card-container .article-list-item-line h1{
             font-size: 1.5em !important;
@@ -47,37 +47,44 @@ export default {
     .article-card-container{
         border-bottom: 1px solid #ddd;
         padding-bottom: 20px;
-    }
-    .article-card-container .article-list-item-line{
-        display: flex;
-        justify-content: space-between;
-    }
-    .article-card-container .article-list-item-line .article-list-item-title{
-        flex-shrink: 1;
-        margin-right: 15px;
-    }
-    .article-card-container .article-list-item-line h1{
-        font-weight: 300;
-        line-height: 40px;
-        color: #333;
-    }
-    .article-card-container .article-list-item-line .article-list-item-aside{
-        flex-shrink: 0;
-        margin-top: 1.6em;
-        font-size: .9em;
-        text-align: right;
-        color: #999;
-    }
-    .article-card-container .article-list-item-line .article-list-item-aside span{
-        display: block;
-    }
-    .article-card-container .article-list-item-more{
-        margin-left: 20px;
-    }
-    .article-card-container .article-list-item-more::after{
-        content: ">>";
-        margin-left: 5px;
-        font-size: .6em;
-        font-weight: 700;
+
+        .article-list-item-line{
+            display: flex;
+            justify-content: space-between;
+
+            .article-list-item-title{
+                flex-shrink: 1;
+                margin-right: 15px;
+            }
+
+            h1{
+                font-weight: 300;
+                line-height: 40px;
+                color: #333;
+            }
+
+            .article-list-item-aside{
+                flex-shrink: 0;
+                margin-top: 1.6em;
+                font-size: .9em;
+                text-align: right;
+                color: #999;
+
+                span{
+                    display: block;
+                }
+            }
+        }
+
+        .article-list-item-more{
+            margin-left: 20px;
+
+            &::after{
+                content: ">>";
+                margin-left: 5px;
+                font-size: .6em;
+                font-weight: 700;
+            }
+        }
     }
 </style>
